@@ -2,6 +2,11 @@
 
 import io
 from time import sleep
+from urllib.request import urlopen
+
+myAPI = 'AWE52J15SYSO4ANM'
+
+baseURL = 'https://api.thingspeak.com/update?api_key=%s' % myAPI
 
 
 while True:
@@ -12,4 +17,9 @@ while True:
  
   print (tempC)
 
-  sleep(5)
+  conn = urlopen(baseURL + '&field5=%s' % tempC)
+  conn.read()
+  conn.close()
+
+
+  sleep(60)

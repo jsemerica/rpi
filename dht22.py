@@ -29,5 +29,5 @@ while True:
     else:
         print("Failed to retrieve data from humidity sensor")
 
-    sleep(5)
+    sleep(30)
 
