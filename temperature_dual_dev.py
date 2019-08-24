@@ -59,8 +59,11 @@ while True:
     temp1 = read_temp_device1()
     temp2 = read_temp_device2()
 
+    temp1f = '%.1f' % temp1
+    temp2f = '%.1f' % temp2
+
 #    conn = urllib2.urlopen(baseURL + '&field3=%s' % temp)
-    conn = urllib2.urlopen(baseURL + '&field3=%s&field4=%s' % (temp1, temp2))
+    conn = urllib2.urlopen(baseURL + '&field3=%s&field4=%s' % (temp1f, temp2f))
     print conn.read()
     conn.close()
 

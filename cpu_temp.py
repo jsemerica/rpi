@@ -14,12 +14,15 @@ while True:
   tFile = open('/sys/class/thermal/thermal_zone0/temp')
   temp = float(tFile.read())
   tempC = temp/1000
- 
-  print (tempC)
 
-  conn = urlopen(baseURL + '&field5=%s' % tempC)
-  conn.read()
-  conn.close()
+  if ( tempC < 72 ):
+    print ("cold", tempC)
+  else:
+    print ("hot", tempC)
+
+#  conn = urlopen(baseURL + '&field5=%s' % tempC)
+#  conn.read()
+#  conn.close()
 
 
-  sleep(60)
+  sleep(2)
